@@ -30,7 +30,7 @@ else:
 
 # Import the code with the actual implementation
 from convex_hull import *
-#from convex_hull_complete_nonthread import *
+# from convex_hull_complete_nonthread import *
 
 
 # This class controls the visual stuff in the GUI.  An instance of it is passed to the solver
@@ -110,6 +110,11 @@ class PointLineView( QWidget ):
 			for point in self.pointList[color]:
 				pt = QPointF(w*point.x(), h*point.y())
 				painter.drawEllipse( pt, 1.0, 1.0)
+
+				# painter.scale(1.0, -1.0)
+				# textPoint = QPointF(w * point.x(), -h * point.y())
+				# painter.drawText(textPoint, str(round(point.x(), 3)) + "," + str(round(point.y(), 3)))
+				# painter.scale(1.0, -1.0)
 
 
 # Main GUI class
@@ -296,8 +301,6 @@ class Proj2GUI( QMainWindow ):
 		self.showRecursion.setChecked(False)
 
 		self.show()
-
-
 
 
 if __name__ == '__main__':
